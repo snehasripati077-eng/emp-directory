@@ -1,12 +1,54 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('emp-dir');
+
+  employees = [
+    {
+      id: 101,
+      name: 'Rahul Sharma',
+      department: 'IT'
+    },
+    {
+      id: 102,
+      name: 'Priya Das',
+      department: 'HR'
+    },
+    {
+      id: 103,
+      name: 'Amit Kumar',
+      department: 'Finance'
+    }
+  ];
+
+  clearEmployees() {
+    this.employees = [];
+  }
+
+  loadEmployees() {
+    this.employees = [
+      {
+        id: 101,
+        name: 'Rahul Sharma',
+        department: 'IT'
+      },
+      {
+        id: 102,
+        name: 'Priya Das',
+        department: 'HR'
+      },
+      {
+        id: 103,
+        name: 'Amit Kumar',
+        department: 'Finance'
+      }
+    ];
+  }
 }
